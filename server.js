@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://127.0.0.1/my_database';
+const mongoDB = 'mongodb://eladh:tkgs1981@ds157422.mlab.com:57422/mortgagedb';
 mongoose.connect(mongoDB);
 
 const mortgageModel = require('./models/mortgageSchema.js');
