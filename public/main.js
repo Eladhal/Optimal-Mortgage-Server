@@ -23,6 +23,54 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/Directives/percentage-validator.directive.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/Directives/percentage-validator.directive.ts ***!
+  \**************************************************************/
+/*! exports provided: PercentageValidatorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PercentageValidatorDirective", function() { return PercentageValidatorDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PercentageValidatorDirective = /** @class */ (function () {
+    function PercentageValidatorDirective() {
+    }
+    PercentageValidatorDirective_1 = PercentageValidatorDirective;
+    PercentageValidatorDirective.prototype.validate = function (control) {
+        var elementValue = control.value;
+        if (elementValue < 0 || elementValue > 100) {
+            return { 'cus_percentage': 'Ned to enter numbers between 0 to 100' };
+        }
+    };
+    PercentageValidatorDirective = PercentageValidatorDirective_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appPercentageValidator]',
+            providers: [{ provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALIDATORS"], useExisting: PercentageValidatorDirective_1, multi: true }]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PercentageValidatorDirective);
+    return PercentageValidatorDirective;
+    var PercentageValidatorDirective_1;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -100,12 +148,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bottom_bottom_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./bottom/bottom.component */ "./src/app/bottom/bottom.component.ts");
 /* harmony import */ var _main_title_main_title_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main-title/main-title.component */ "./src/app/main-title/main-title.component.ts");
 /* harmony import */ var _data_form_data_form_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./data-form/data-form.component */ "./src/app/data-form/data-form.component.ts");
+/* harmony import */ var _Directives_percentage_validator_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Directives/percentage-validator.directive */ "./src/app/Directives/percentage-validator.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -125,7 +175,8 @@ var AppModule = /** @class */ (function () {
                 _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_5__["NavbarComponent"],
                 _bottom_bottom_component__WEBPACK_IMPORTED_MODULE_6__["BottomComponent"],
                 _main_title_main_title_component__WEBPACK_IMPORTED_MODULE_7__["MainTitleComponent"],
-                _data_form_data_form_component__WEBPACK_IMPORTED_MODULE_8__["DataFormComponent"]
+                _data_form_data_form_component__WEBPACK_IMPORTED_MODULE_8__["DataFormComponent"],
+                _Directives_percentage_validator_directive__WEBPACK_IMPORTED_MODULE_9__["PercentageValidatorDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
@@ -204,6 +255,49 @@ var BottomComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/classes/mortgagePlane.ts":
+/*!******************************************!*\
+  !*** ./src/app/classes/mortgagePlane.ts ***!
+  \******************************************/
+/*! exports provided: MortgageData, MortgagePlan, Plans, Period */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MortgageData", function() { return MortgageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MortgagePlan", function() { return MortgagePlan; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Plans", function() { return Plans; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Period", function() { return Period; });
+var MortgageData = /** @class */ (function () {
+    function MortgageData() {
+        this.plans = [];
+    }
+    return MortgageData;
+}());
+
+var MortgagePlan = /** @class */ (function () {
+    function MortgagePlan() {
+    }
+    return MortgagePlan;
+}());
+
+var Plans = [
+    'פריים',
+    'קבועה לא צמודה',
+    'משתנה צמודה',
+    'משתנה לא צמודה',
+    'קבועה צמודה'
+];
+var Period = [
+    '0 - 10',
+    '11 - 15',
+    '16 - 20',
+    '21 - 30',
+];
+
+
+/***/ }),
+
 /***/ "./src/app/data-form/data-form.component.css":
 /*!***************************************************!*\
   !*** ./src/app/data-form/data-form.component.css ***!
@@ -222,7 +316,7 @@ module.exports = "\n.container {\n    display: flex;\n    flex-direction: column
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form #form=\"ngForm\" (ngSubmit)=\"logForm()\">\n    <div class=\"container\">\n        <div class=\"mainData\">\n            <div class=\"sideTilteParent\">\n                <div class=\"sideTilte\">שלב 1 פרטים כללים</div>\n            </div>\n            <div class=\"data\">\n                <div class=\"innerContainer\">\n                    <div class=\"inputs\">\n                        <div class=\"form-group\">\n                            <label for=\"Mortgage\">סכום משכנתא</label>\n                            <input class=\"form-control\" type=\"number\" name=\"MortgageSum\" id=\"Mortgage\"\n                                   [(ngModel)]=\"mortgageData.mortgageSum\"\n                                   #MortgageSum=\"ngModel\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MortgageSum.invalid && (MortgageSum.dirty || MortgageSum.touched)\">\n                                <div *ngIf=\"MortgageSum?.errors.required\">\n                                    יש להזין סכום משכנתא.\n                                </div>\n                                <div *ngIf=\"MortgageSum?.errors.pattern\">\n                                    סכום המשכנתא חייב לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"Prop\">שווי נכס</label>\n                            <input class=\"form-control\" type=\"number\" name=\"PropValue\"\n                                   [(ngModel)]=\"mortgageData.propValue\"\n                                   #PropValue=\"ngModel\" id=\"Prop\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"PropValue.invalid && (PropValue.dirty || PropValue.touched)\">\n                                <div *ngIf=\"PropValue?.errors.required\">\n                                    יש להזין שווי נכס.\n                                </div>\n                                <div *ngIf=\"PropValue?.errors.pattern\">\n                                    שווי נכס חייב לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"Net\">הכנסה נטו</label>\n                            <input class=\"form-control\" type=\"number\" name=\"NetIncome\"\n                                   [(ngModel)]=\"mortgageData.netIncome\"\n                                   #NetIncome=\"ngModel\" id=\"Net\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"NetIncome.invalid && (NetIncome.dirty || NetIncome.touched)\">\n                                <div *ngIf=\"NetIncome?.errors.required\">\n                                    יש להזין הכנסה נטו.\n                                </div>\n                                <div *ngIf=\"NetIncome?.errors.pattern\">\n                                    הכנסה נטו חייבת לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"buttons\">\n                        <button type=\"button\" class=\"btnContinue btn btn-success btn-sm\"\n                                [disabled]=\"(MortgageSum.invalid || PropValue.invalid || NetIncome.invalid)\"\n                                (click)=\"btnAddNewPlan()\">המשך\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"mainDataPlans\" *ngFor=\"let mortgagePlan of mortgageData.plans; let i=index\">\n            <div class=\"sideTilteParentPlans\">\n                <div *ngIf=\"i===0\" class=\"sideTilte\">שלב 2 הרכב משכנתא</div>\n            </div>\n            <div class=\"dataPlans\">\n                <div class=\"innerContainer\">\n                    <div class=\"inputs\">\n                        <div class=\"form-group\">\n                            <label >בחר מסלול</label>\n                            <select class=\"form-control\" name=\"mortgagePlan_{{i}}\" [(ngModel)]=\"mortgagePlan.plan\"\n                                    #Plan=\"ngModel\"\n                                    required>\n                                <option *ngFor=\"let plan of MPlans\" [value]=\"plan\">{{plan}}</option>\n                            </select>\n                            <div class=\"messageError\"\n                                 *ngIf=\"Plan.invalid && (Plan.dirty || Plan.touched)\">\n                                יש צורך להזין מסלול.\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>סכום מסלול</label>\n                            <input class=\"form-control\" type=\"number\" name=\"planSum_{{i}}\"\n                                   [(ngModel)]=\"mortgagePlan.sum\"\n                                   #MPlanSum=\"ngModel\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MPlanSum.invalid && (MPlanSum.dirty || MPlanSum.touched)\">\n                                <div *ngIf=\"MPlanSum?.errors.required\">\n                                    יש להזין סכום מסלול.\n                                </div>\n                                <div *ngIf=\"MPlanSum?.errors.pattern\">\n                                    סכום מסלול לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>תקופה בשנים</label>\n                            <select class=\"form-control\" name=\"mortgagePeriod_{{i}}\" [(ngModel)]=\"mortgagePlan.period\"\n                                    #MPeriod=\"ngModel\" required>\n                                <option *ngFor=\"let p of Period\" [value]=\"p\">{{p}}</option>\n                            </select>\n                            <div class=\"messageError\"\n                                 *ngIf=\"MPeriod.invalid && (MPeriod.dirty || MPeriod.touched)\">\n                                יש צורך להזין תקופה בשנים.\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>ריבית שהתקבלה עבור המסלול הזה</label>\n                            <input class=\"form-control\" type=\"number\" name=\"interest_{{i}}\" min=\"0\" max=\"100\"\n                                   [(ngModel)]=\"mortgagePlan.interest\" #MInterest=\"ngModel\" required pattern=\"^[+-]?([0-9]*[.])?[0-9]+$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MInterest.invalid && (MInterest.dirty || MInterest.touched)\">\n                                <div *ngIf=\"MInterest?.errors.required\">\n                                    יש צורך להזין ריבית.\n                                </div>\n                                <div *ngIf=\"MInterest?.errors.pattern\">\n                                    ריבית צריכה לכלול מספרים בלבד.\n                                </div>\n                                <div *ngIf=\"MInterest.value < minInterest\">\n                                    ריבית צריכה להיות גדולה מ - 0.\n                                </div>\n                                <div *ngIf=\"MInterest.value > maxInterest\">\n                                    ריבית צריכה להיות קטנה מ - 100.\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"buttons\">\n                        <button type=\"button\" class=\" btnContinue btn btn-success btn-sm\"\n                                [disabled]=\"(Plan.invalid || MPlanSum.invalid || MPeriod.invalid || MInterest.invalid)\"\n                                (click)=\"btnAddNewPlan()\">הוסף\n                            מסלול נוסף +\n                        </button>\n                        <button type=\"button\" class=\"btnAddPlan btnContinue btn btn-success btn-sm\" (click)=\"btnRemovePlan(mortgagePlan)\">הסר מסלול</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"btnSub\">\n        <button class=\"btn btn-warning\" [disabled]=\"form.invalid || mortgageData.plans.length === 0\"\n                type=\"submit\">איך המשכנתא\n            שלי\n        </button>\n    </div>\n</form>\n"
+module.exports = "<form #form=\"ngForm\" (ngSubmit)=\"logForm()\">\n    <div class=\"container\">\n        <div class=\"mainData\">\n            <div class=\"sideTilteParent\">\n                <div class=\"sideTilte\">שלב 1 פרטים כללים</div>\n            </div>\n            <div class=\"data\">\n                <div class=\"innerContainer\">\n                    <div class=\"inputs\">\n                        <div class=\"form-group\">\n                            <label for=\"Mortgage\">סכום משכנתא</label>\n                            <input class=\"form-control\" type=\"number\" name=\"MortgageSum\" id=\"Mortgage\"\n                                   [(ngModel)]=\"mortgageData.mortgageSum\"\n                                   #MortgageSum=\"ngModel\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MortgageSum.invalid && (MortgageSum.dirty || MortgageSum.touched)\">\n                                <div *ngIf=\"MortgageSum?.errors.required\">\n                                    יש להזין סכום משכנתא.\n                                </div>\n                                <div *ngIf=\"MortgageSum?.errors.pattern\">\n                                    סכום המשכנתא חייב לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"Prop\">שווי נכס</label>\n                            <input class=\"form-control\" type=\"number\" name=\"PropValue\"\n                                   [(ngModel)]=\"mortgageData.propValue\"\n                                   #PropValue=\"ngModel\" id=\"Prop\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"PropValue.invalid && (PropValue.dirty || PropValue.touched)\">\n                                <div *ngIf=\"PropValue?.errors.required\">\n                                    יש להזין שווי נכס.\n                                </div>\n                                <div *ngIf=\"PropValue?.errors.pattern\">\n                                    שווי נכס חייב לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"Net\">הכנסה נטו</label>\n                            <input class=\"form-control\" type=\"number\" name=\"NetIncome\"\n                                   [(ngModel)]=\"mortgageData.netIncome\"\n                                   #NetIncome=\"ngModel\" id=\"Net\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"NetIncome.invalid && (NetIncome.dirty || NetIncome.touched)\">\n                                <div *ngIf=\"NetIncome?.errors.required\">\n                                    יש להזין הכנסה נטו.\n                                </div>\n                                <div *ngIf=\"NetIncome?.errors.pattern\">\n                                    הכנסה נטו חייבת לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"buttons\">\n                        <button type=\"button\" class=\"btnContinue btn btn-success btn-sm\"\n                                [disabled]=\"(MortgageSum.invalid || PropValue.invalid || NetIncome.invalid)\"\n                                (click)=\"btnAddNewPlan()\">המשך\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"mainDataPlans\" *ngFor=\"let mortgagePlan of mortgageData.plans; let i=index\">\n            <div class=\"sideTilteParentPlans\">\n                <div *ngIf=\"i===0\" class=\"sideTilte\">שלב 2 הרכב משכנתא</div>\n            </div>\n            <div class=\"dataPlans\">\n                <div class=\"innerContainer\">\n                    <div class=\"inputs\">\n                        <div class=\"form-group\">\n                            <label >בחר מסלול</label>\n                            <select class=\"form-control\" name=\"mortgagePlan_{{i}}\" [(ngModel)]=\"mortgagePlan.plan\"\n                                    #Plan=\"ngModel\"\n                                    required>\n                                <option *ngFor=\"let plan of MPlans\" [value]=\"plan\">{{plan}}</option>\n                            </select>\n                            <div class=\"messageError\"\n                                 *ngIf=\"Plan.invalid && (Plan.dirty || Plan.touched)\">\n                                יש צורך להזין מסלול.\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>סכום מסלול</label>\n                            <input class=\"form-control\" type=\"number\" name=\"planSum_{{i}}\"\n                                   [(ngModel)]=\"mortgagePlan.sum\"\n                                   #MPlanSum=\"ngModel\" required pattern=\"^[0-9]*$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MPlanSum.invalid && (MPlanSum.dirty || MPlanSum.touched)\">\n                                <div *ngIf=\"MPlanSum?.errors.required\">\n                                    יש להזין סכום מסלול.\n                                </div>\n                                <div *ngIf=\"MPlanSum?.errors.pattern\">\n                                    סכום מסלול לכלול מספרים בלבד.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>תקופה בשנים</label>\n                            <select class=\"form-control\" name=\"mortgagePeriod_{{i}}\" [(ngModel)]=\"mortgagePlan.period\"\n                                    #MPeriod=\"ngModel\" required>\n                                <option *ngFor=\"let p of Period\" [value]=\"p\">{{p}}</option>\n                            </select>\n                            <div class=\"messageError\"\n                                 *ngIf=\"MPeriod.invalid && (MPeriod.dirty || MPeriod.touched)\">\n                                יש צורך להזין תקופה בשנים.\n                            </div>\n                        </div>\n                        <div class=\"form-group\">\n                            <label>ריבית שהתקבלה עבור המסלול הזה</label>\n                            <input class=\"form-control\" type=\"number\" name=\"interest_{{i}}\" min=\"0\" max=\"100\"\n                                   [(ngModel)]=\"mortgagePlan.interest\" #MInterest=\"ngModel\" appPercentageValidator required pattern=\"^[+-]?([0-9]*[.])?[0-9]+$\">\n                            <div class=\"messageError\"\n                                 *ngIf=\"MInterest.invalid && (MInterest.dirty || MInterest.touched)\">\n                                <div *ngIf=\"MInterest?.errors.required\">\n                                    יש צורך להזין ריבית.\n                                </div>\n                                <div *ngIf=\"MInterest?.errors.pattern\">\n                                    ריבית צריכה לכלול מספרים בלבד.\n                                </div>\n                                <div *ngIf=\"MInterest?.errors.cus_percentage\">\n                                    יש להזין מספר בין 0 ל - 100\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"buttons\">\n                        <button type=\"button\" class=\" btnContinue btn btn-success btn-sm\"\n                                [disabled]=\"(Plan.invalid || MPlanSum.invalid || MPeriod.invalid || MInterest.invalid)\"\n                                (click)=\"btnAddNewPlan()\">הוסף\n                            מסלול נוסף +\n                        </button>\n                        <button type=\"button\" class=\"btnAddPlan btnContinue btn btn-success btn-sm\" (click)=\"btnRemovePlan(mortgagePlan)\">הסר מסלול</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"btnSub\">\n        <button class=\"btn btn-warning\" [disabled]=\"form.invalid || mortgageData.plans.length === 0\"\n                type=\"submit\">איך המשכנתא\n            שלי\n        </button>\n    </div>\n</form>\n"
 
 /***/ }),
 
@@ -237,7 +331,7 @@ module.exports = "<form #form=\"ngForm\" (ngSubmit)=\"logForm()\">\n    <div cla
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataFormComponent", function() { return DataFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _mortgagePlane__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mortgagePlane */ "./src/app/mortgagePlane.ts");
+/* harmony import */ var _classes_mortgagePlane__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../classes/mortgagePlane */ "./src/app/classes/mortgagePlane.ts");
 /* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -257,11 +351,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataFormComponent = /** @class */ (function () {
     function DataFormComponent(http) {
         this.http = http;
-        this.MPlans = _mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["Plans"];
-        this.Period = _mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["Period"];
+        this.MPlans = _classes_mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["Plans"];
+        this.Period = _classes_mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["Period"];
         this.minInterest = 0;
         this.maxInterest = 100;
-        this.mortgageData = new _mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["MortgageData"]();
+        this.mortgageData = new _classes_mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["MortgageData"]();
     }
     DataFormComponent.prototype.ngOnInit = function () {
     };
@@ -269,7 +363,7 @@ var DataFormComponent = /** @class */ (function () {
         this.http.addMortgage(this.mortgageData);
     };
     DataFormComponent.prototype.btnAddNewPlan = function () {
-        var plan = new _mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["MortgagePlan"]();
+        var plan = new _classes_mortgagePlane__WEBPACK_IMPORTED_MODULE_1__["MortgagePlan"]();
         plan.id = this.mortgageData.plans.length + 1;
         this.mortgageData.plans.push(plan);
     };
@@ -353,49 +447,6 @@ var MainTitleComponent = /** @class */ (function () {
     return MainTitleComponent;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/app/mortgagePlane.ts":
-/*!**********************************!*\
-  !*** ./src/app/mortgagePlane.ts ***!
-  \**********************************/
-/*! exports provided: MortgageData, MortgagePlan, Plans, Period */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MortgageData", function() { return MortgageData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MortgagePlan", function() { return MortgagePlan; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Plans", function() { return Plans; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Period", function() { return Period; });
-var MortgageData = /** @class */ (function () {
-    function MortgageData() {
-        this.plans = [];
-    }
-    return MortgageData;
-}());
-
-var MortgagePlan = /** @class */ (function () {
-    function MortgagePlan() {
-    }
-    return MortgagePlan;
-}());
-
-var Plans = [
-    'פריים',
-    'קבועה לא צמודה',
-    'משתנה צמודה',
-    'משתנה לא צמודה',
-    'קבועה צמודה'
-];
-var Period = [
-    '0 - 10',
-    '11 - 15',
-    '16 - 20',
-    '21 - 30',
-];
 
 
 /***/ }),
