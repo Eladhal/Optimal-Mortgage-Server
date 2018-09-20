@@ -197,13 +197,16 @@ var SumValidatorDirective = /** @class */ (function () {
     }
     SumValidatorDirective_1 = SumValidatorDirective;
     SumValidatorDirective.prototype.validate = function (control) {
-        var elementValue = +control.value;
-        if (elementValue != null) {
+        if (control.value !== null) {
+            var str = control.value.replace(/,/g, '');
+            var elementValue = +str;
             var sum = 0;
             for (var i = 0; i < this.indx; i++) {
                 sum = sum + this.mPlans[i].sum;
             }
             sum = sum + elementValue;
+            console.log(sum);
+            console.log(this.mSum);
             if (sum > this.mSum) {
                 return { 'cus_sum': 'sum of plans is bigger than mortgage sum' };
             }
