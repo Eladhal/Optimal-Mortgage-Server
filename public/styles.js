@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/eladhalperin/Desktop/Angular/Optimal-Mortgage/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! /Users/eladhalperin/Desktop/Angular/Optimal-Mortgage/node_modules/bootstrap-with-rtl/dist/css/bootstrap.rtl.min.css */"./node_modules/bootstrap-with-rtl/dist/css/bootstrap.rtl.min.css");
-module.exports = __webpack_require__(/*! /Users/eladhalperin/Desktop/Angular/Optimal-Mortgage/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /Users/eladhalperin/Desktop/mortgageProject/Optimal-Mortgage/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! /Users/eladhalperin/Desktop/mortgageProject/Optimal-Mortgage/node_modules/bootstrap-with-rtl/dist/css/bootstrap.rtl.min.css */"./node_modules/bootstrap-with-rtl/dist/css/bootstrap.rtl.min.css");
+module.exports = __webpack_require__(/*! /Users/eladhalperin/Desktop/mortgageProject/Optimal-Mortgage/src/styles.css */"./src/styles.css");
 
 
 /***/ })

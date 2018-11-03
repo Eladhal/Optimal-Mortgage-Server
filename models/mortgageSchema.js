@@ -6,6 +6,7 @@ const mortgageSchema = new schema({
     mortgageSum: Number,
     propValue: Number,
     netIncome: Number,
-    plans: [{plan: String, sum: Number, period: String, interest: Number}]
+    plans: [{plan: String, sum: Number, period: String, interest: Number}],
+    type: String // Type of "Tamhail"
 });
 module.exports = mongoose.model("mortgageModel", mortgageSchema);
