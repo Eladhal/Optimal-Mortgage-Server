@@ -34,13 +34,9 @@ app.route("/api/mortgage-plan")
             // TBD When the user entered a mix that not exist...
         }
 
+        let newMortgagePlan = new mortgageModel(req.body);
+        newMortgagePlan.save();
     });
-
-// let newMortgagePlan = new mortgageModel(req.body);
-// newMortgagePlan.save();
-// res.send(newMortgagePlan);
-
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "Public/index.html"));
 });
