@@ -98,7 +98,8 @@ module.exports = {
             });
             const averagePlans = arrPlans.map((plan) => plan.interest).reduce((a, b) => a + b, 0) / arrPlans.length;
             console.log(plan.plan +" "+averagePlans);
-            interestCompare.push({plan: plan.plan, result: plan.interest > averagePlans ? 'ניתן לשפר' : 'לא ניתן לשפר'})
+            interestCompare.push({plan: plan.plan,average:isNaN(averagePlans)?"אין רשומות ממסלול זה":averagePlans,
+                                  result: plan.interest > averagePlans ? 'ניתן לשפר' : 'לא ניתן לשפר'})
         });
         return interestCompare;
     }

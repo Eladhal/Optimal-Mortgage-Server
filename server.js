@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 8080;
-//const port = 3000;
+// const port = process.env.PORT || 8080;
+const port = 3000;
 const mongoose = require('mongoose');
 const mongoDB = 'mongodb://eladh:tkgs1981@ds157422.mlab.com:57422/mortgagedb';
 mongoose.connect(mongoDB);
@@ -21,9 +21,10 @@ app.route("/api/mortgage-plan")
     .post((req, res) => {
         const mortgageMix = utility.getMortgageMix(req.body);
         const financingPercent = req.body.mortgageSum / req.body.propValue;
-
+        console.log(mortgageMix);
         if (mortgageMix) {
             mortgageModel.find({type: mortgageMix}, function (err, docs) {
+                console.log(docs);
                 const arrMortSamefinancPercent = utility.getarrMortSamefinancPercent(financingPercent, docs); // collect all docs with same finance Percent range as the user mortgage
                 const allPlans = utility.getAllMortPlans(arrMortSamefinancPercent); // collect all plans from the relevant mortgages(arrMortSamefinancPercent)
                 const InterestCompareObj = utility.getInterestCompareObj(req.body.plans, allPlans);
