@@ -20,7 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.route("/api/mortgage-plan")
     .post((req, res) => {
         const mortgageMix = utility.getMortgageMix(req.body);
+        console.log('mortgageMix - '+ mortgageMix);
         const financingPercent = req.body.mortgageSum / req.body.propValue;
+        console.log('financingPercent - '+ financingPercent);
         if (mortgageMix) {
             mortgageModel.find({type: mortgageMix}, function (err, docs) {
                 console.log(docs);
@@ -33,8 +35,9 @@ app.route("/api/mortgage-plan")
         else {
             // TBD When the user entered a mix that not exist...
         }
-
-        let newMortgagePlan = new mortgageModel(req.body);
+        let mortgageData = req.body;
+        mortgageData.type = mortgageMix;
+        let newMortgagePlan = new mortgageModel(mortgageData);
         newMortgagePlan.save();
     });
 app.get('*', (req, res) => {
